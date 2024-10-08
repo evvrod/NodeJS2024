@@ -1,0 +1,1 @@
+Completed assignments for the [Node.js Course, RS School](https://github.com/rolling-scopes-school/tasks/tree/master/node)
