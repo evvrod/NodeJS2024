@@ -2,7 +2,12 @@
   "name": "filemanager",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "type": "module",  "scripts": {
+    "start": "node index.js -- --username=evvrod",
+    "cli:args": "node index.js --some-arg value1 --other 1337 --arg2 42",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "evvrod",
