@@ -8,7 +8,7 @@ export const compressFile = async (sourcePath, destinationPath) => {
     try {
         const targetPath = resolve(process.cwd(), sourcePath);
         const outputDir = resolve(process.cwd(), destinationPath);
-        const outputPath = join(outputDir, `${sourcePath}.br`);
+        const outputPath = join(outputDir, `${basename(sourcePath)}.br`);
 
         await isExist(targetPath);
         await isFile(targetPath);
