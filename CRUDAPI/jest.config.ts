@@ -9,9 +9,9 @@ const config: Config = {
   moduleFileExtensions: ['ts', 'js', 'json'],
   restoreMocks: true,
   resetMocks: true,
-  moduleDirectories: ['node_modules', '<rootDir>/src'],
+  moduleDirectories: ['node_modules', '/dist'],
   transform: {
-    '^.+\\.ts?$': 'ts-jest',
+    '^.+\\.ts$': 'ts-jest',
     '^.+\\.js$': 'babel-jest',
   },
 };

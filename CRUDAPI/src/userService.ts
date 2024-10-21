@@ -1,7 +1,7 @@
 // Реализует бизнес-логику CRUD для пользователей. Здесь мы также используем uuid для генерации уникальных идентификаторов.
 
 import { v4 as uuidv4 } from 'uuid';
-import IUser from './user.js';
+import IUser from './user';
 
 class UserService {
   private users: IUser[] = [];

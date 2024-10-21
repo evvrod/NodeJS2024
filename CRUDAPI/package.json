@@ -1,12 +1,11 @@
 {
   "name": "crudapi",
   "version": "1.0.0",
-  "type": "module",
   "scripts": {
     "dev:single": "nodemon --exec npm run start:dev",
     "dev:multi": "nodemon --exec npm run start:dev:multi",
-    "start:dev": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/singleServer.ts",
-    "start:dev:multi": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/multiServer.ts",
+    "start:dev": "ts-node src/singleServer.ts",
+    "start:dev:multi": "ts-node src/multiServer.ts",
     "start:prod": "tsc && node dist/singleServer.js",
     "start:prod:multi": "tsc && node dist/multiServer.js",
     "test": "jest",
@@ -38,7 +37,7 @@
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.6.3",
-    "typescript-eslint": "^8.10.0"
+    "typescript-eslint": "^8.11.0"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

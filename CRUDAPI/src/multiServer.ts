@@ -1,8 +1,8 @@
 import cluster from 'node:cluster';
 import os from 'node:os';
 
-import { createLoadBalancer } from './multiServer/loadBalancer.js';
-import createServer from './server.js';
+import { createLoadBalancer } from './loadBalancer';
+import createServer from './server';
 
 const numCPUs = os.cpus().length;
 const PORT = 4000;

@@ -1,9 +1,9 @@
 // Настраивает HTTP-сервер и маршруты для обработки запросов.
 
 import http from 'node:http';
-import userController from './userController.ts';
-import validateUUID from './utils/validateUUID.ts';
-import { CustomError, withErrorHandling } from './utils/errorHandler.ts';
+import userController from './userController';
+import validateUUID from './utils/validateUUID';
+import { CustomError, withErrorHandling } from './utils/errorHandler';
 
 type RouteHandler = (
   req: http.IncomingMessage,
@@ -48,6 +48,7 @@ const routes: Routes = {
   },
 
   'DELETE /api/users/:id': async (req, res, userId) => {
+    console.log(userId);
     if (!userId || !validateUUID(userId)) {
       throw new CustomError(400, 'Invalid UUID format');
     }

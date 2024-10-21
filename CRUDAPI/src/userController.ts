@@ -1,9 +1,9 @@
 // Обрабатывает HTTP-запросы, взаимодействует с сервисами и отправляет соответствующие ответы.
 
 import { IncomingMessage, ServerResponse } from 'http';
-import { CustomError } from './utils/errorHandler.ts';
-import IUser from './user.ts';
-import userService from './userService.ts';
+import { CustomError } from './utils/errorHandler';
+import IUser from './user';
+import userService from './userService';
 
 class UserController {
   async create(req: IncomingMessage, res: ServerResponse) {
