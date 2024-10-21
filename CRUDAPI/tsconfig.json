@@ -107,6 +107,6 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "include": ["./src/*.ts", "tests/userApi.test.ts"],
+  "include": ["./src/*.ts", "tests/userApi1.test.ts"],
   "exclude": ["/node_modules/", "dist", "tests"]
 }

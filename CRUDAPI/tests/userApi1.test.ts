@@ -5,7 +5,7 @@ import createServer from '../src/server';
 const PORT = 3000;
 let app: http.Server;
 
-describe('User API', () => {
+describe('User API - 1 scenario', () => {
   let createdUserId: string;
 
   beforeAll(() => {

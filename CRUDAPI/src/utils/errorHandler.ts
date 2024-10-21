@@ -53,7 +53,7 @@ const errorHandler = (res: http.ServerResponse, error: Error) => {
   const message =
     error instanceof CustomError ? error.userMessage : 'Internal Server Error';
 
-  console.error(`Error(${statusCode}): ${message}`);
+  console.log(`Error(${statusCode}): ${message}`);
 
   sendErrorResponse(res, statusCode, message);
 };

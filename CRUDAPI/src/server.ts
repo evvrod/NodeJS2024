@@ -48,7 +48,6 @@ const routes: Routes = {
   },
 
   'DELETE /api/users/:id': async (req, res, userId) => {
-    console.log(userId);
     if (!userId || !validateUUID(userId)) {
       throw new CustomError(400, 'Invalid UUID format');
     }
