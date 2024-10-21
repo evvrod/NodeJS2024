@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "nodemon",
-    "start:dev": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/server.ts",
-    "start:prod": "tsc && node dist/server.js",
+    "dev:single": "nodemon --exec npm run start:dev",
+    "dev:multi": "nodemon --exec npm run start:dev:multi",
+
+    "start:dev": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/singleServer.ts",
+    "start:dev:multi": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/multiServer.ts",
+    
+    "start:prod": "tsc && node dist/singleServer.js",
+    "start:prod:multi": "tsc && node dist/multiServer.js",
+
     "format": "prettier --check ./src",
     "format:fix": "prettier --write ./src",
     "lint": "eslint ./src",

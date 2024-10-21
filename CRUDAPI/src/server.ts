@@ -5,8 +5,6 @@ import userController from './userController.js';
 import validateUUID from './utils/validateUUID.js';
 import { CustomError, withErrorHandling } from './utils/errorHandler.js';
 
-const port = process.env.PORT || 4000;
-
 type RouteHandler = (
   req: http.IncomingMessage,
   res: http.ServerResponse,
@@ -92,26 +90,28 @@ function matchRoute(
   return [undefined, undefined];
 }
 
-const server = http.createServer(
-  withErrorHandling(
-    async (req: http.IncomingMessage, res: http.ServerResponse) => {
-      const { method, url } = req;
+export default function createServer(port: number) {
+  const server = http.createServer(
+    withErrorHandling(
+      async (req: http.IncomingMessage, res: http.ServerResponse) => {
+        const { method, url } = req;
 
-      if (!method || !url) {
-        throw new CustomError(404, 'Not found endpoint');
-      }
+        if (!method || !url) {
+          throw new CustomError(404, 'Not found endpoint');
+        }
 
-      const [routeHandler, userId] = matchRoute(method, url);
+        const [routeHandler, userId] = matchRoute(method, url);
 
-      if (routeHandler) {
-        await routeHandler(req, res, userId);
-      } else {
-        throw new CustomError(404, 'Not found endpoint');
-      }
-    },
-  ),
-);
+        if (routeHandler) {
+          await routeHandler(req, res, userId);
+        } else {
+          throw new CustomError(404, 'Not found endpoint');
+        }
+      },
+    ),
+  );
 
-server.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+  server.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+  });
+}
