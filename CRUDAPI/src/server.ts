@@ -1,9 +1,9 @@
 // Настраивает HTTP-сервер и маршруты для обработки запросов.
 
 import http from 'node:http';
-import userController from './userController.js';
-import validateUUID from './utils/validateUUID.js';
-import { CustomError, withErrorHandling } from './utils/errorHandler.js';
+import userController from './userController.ts';
+import validateUUID from './utils/validateUUID.ts';
+import { CustomError, withErrorHandling } from './utils/errorHandler.ts';
 
 type RouteHandler = (
   req: http.IncomingMessage,
@@ -114,4 +114,6 @@ export default function createServer(port: number) {
   server.listen(port, () => {
     console.log(`Server running on port ${port}`);
   });
+
+  return server;
 }
