@@ -17,8 +17,7 @@ try {
 
     cluster.on('exit', (worker) => {
       console.log(`Worker ${worker.process.pid} died, creating a new one...`);
-      const workerEnv = worker.process as unknown as { env: NodeJS.ProcessEnv };
-      const workerPort = workerEnv.env.WORKER_PORT;
+      const workerPort = worker.process.spawnargs.find(arg => arg.includes('WORKER_PORT'))?.split('=')[1];
       cluster.fork({ WORKER_PORT: workerPort });
     });
 

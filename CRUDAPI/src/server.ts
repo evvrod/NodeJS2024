@@ -18,14 +18,14 @@ type Routes = {
 
 const routes: Routes = {
   'GET /api/users': async (req, res) => {
-    userController.getAll(req, res);
+    await userController.getAll(req, res);
   },
 
   'GET /api/users/:id': async (req, res, userId) => {
     if (!userId || !validateUUID(userId)) {
       throw new CustomError(400, 'Invalid UUID format');
     }
-    userController.getById(req, res, userId);
+    await userController.getById(req, res, userId);
   },
 
   'POST /api/users': async (
@@ -52,7 +52,7 @@ const routes: Routes = {
       throw new CustomError(400, 'Invalid UUID format');
     }
 
-    userController.delete(req, res, userId);
+    await userController.delete(req, res, userId);
   },
 };
 

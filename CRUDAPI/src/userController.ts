@@ -20,20 +20,20 @@ class UserController {
       throw new CustomError(400, 'Invalid request data');
     }
 
-    const user = userService.createUser(data);
-
+    const user = await userService.createUser(data);
+    
     res.writeHead(201, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(user));
   }
 
-  getAll(req: IncomingMessage, res: ServerResponse) {
-    const users = userService.getAllUsers();
+  async getAll(req: IncomingMessage, res: ServerResponse) {
+    const users = await userService.getAllUsers();
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(users));
   }
 
-  getById(req: IncomingMessage, res: ServerResponse, userId?: string) {
-    const user = userService.getUserById(userId!);
+  async getById(req: IncomingMessage, res: ServerResponse, userId?: string) {
+    const user = await userService.getUserById(userId!);
     if (!user) {
       throw new CustomError(404, 'User not found');
     }
@@ -53,7 +53,7 @@ class UserController {
       throw new CustomError(400, 'Invalid JSON format');
     }
 
-    const user = userService.updateUser(userId!, data);
+    const user = await userService.updateUser(userId!, data);
 
     if (!user) {
       throw new CustomError(404, 'User not found');
@@ -63,8 +63,8 @@ class UserController {
     res.end(JSON.stringify(user));
   }
 
-  delete(req: IncomingMessage, res: ServerResponse, userId?: string) {
-    const deleted = userService.deleteUser(userId!);
+  async delete(req: IncomingMessage, res: ServerResponse, userId?: string) {
+    const deleted = await userService.deleteUser(userId!);
     if (!deleted) {
       throw new CustomError(404, 'User not found');
     }
