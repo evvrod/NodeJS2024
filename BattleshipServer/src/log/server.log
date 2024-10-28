@@ -1,0 +1,242 @@
+[2024-10-28T20:35:10.348Z] INFO: Start websocket server on the port: 3000
+[2024-10-28T20:35:50.480Z] INFO: Start websocket server on the port: 3000
+[2024-10-28T20:36:14.387Z] INFO: Start websocket server on the port: 3000
+[2024-10-28T20:36:20.767Z] INFO: New connection established. Client ID: 07c75d0f-801a-4517-9fbd-d27609262370, IP: ::1
+[2024-10-28T20:36:23.534Z] INFO: Registering a new player. Name: 123123 / ID: 74h8y3w
+[2024-10-28T20:36:24.817Z] INFO: Registering a new bot. Name: Bot_74h8y3w / ID: fe3je96
+[2024-10-28T20:36:24.817Z] INFO: Room created with ID: kgw0oym
+[2024-10-28T20:36:24.817Z] INFO: User 74h8y3w added to room kgw0oym
+[2024-10-28T20:36:24.817Z] INFO: User fe3je96 added to room kgw0oym
+[2024-10-28T20:36:24.818Z] INFO: Game oixu2zb has been created
+[2024-10-28T20:36:28.113Z] INFO: Game oixu2zb has started
+[2024-10-28T20:36:29.366Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 0/0. Result: miss
+[2024-10-28T20:36:29.366Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:36:29.366Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 2/1. Result: miss
+[2024-10-28T20:36:29.367Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:36:44.378Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:36:44.380Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 7/1. Result: miss
+[2024-10-28T20:36:44.380Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:36:44.377Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 5/9. Result: miss
+[2024-10-28T20:36:49.713Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 0/2. Result: miss
+[2024-10-28T20:36:49.716Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 1/6. Result: shot
+[2024-10-28T20:36:49.714Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:36:49.717Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 8/1. Result: miss
+[2024-10-28T20:36:49.717Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:36:58.347Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 1/3. Result: miss
+[2024-10-28T20:36:58.348Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:36:58.349Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 1/5. Result: miss
+[2024-10-28T20:36:58.349Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:36:58.813Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 4/4. Result: shot
+[2024-10-28T20:36:59.509Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 6/2. Result: miss
+[2024-10-28T20:36:59.510Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:36:59.510Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 3/9. Result: shot
+[2024-10-28T20:36:59.510Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 7/9. Result: miss
+[2024-10-28T20:36:59.510Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:00.087Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 4/3. Result: miss
+[2024-10-28T20:37:00.087Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:00.087Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 3/5. Result: miss
+[2024-10-28T20:37:00.088Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:00.658Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 4/5. Result: miss
+[2024-10-28T20:37:00.658Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:00.658Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 2/5. Result: miss
+[2024-10-28T20:37:00.658Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:01.191Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 5/4. Result: shot
+[2024-10-28T20:37:01.667Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 3/4. Result: miss
+[2024-10-28T20:37:01.669Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:01.668Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:01.669Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 0/8. Result: miss
+[2024-10-28T20:37:02.445Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 6/4. Result: shot
+[2024-10-28T20:37:02.982Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 7/4. Result: killed
+[2024-10-28T20:37:17.569Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 1/7. Result: miss
+[2024-10-28T20:37:17.570Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:17.570Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 3/1. Result: miss
+[2024-10-28T20:37:17.571Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:17.931Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 1/5. Result: miss
+[2024-10-28T20:37:17.931Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:17.932Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 7/4. Result: miss
+[2024-10-28T20:37:17.932Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:18.404Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 2/3. Result: miss
+[2024-10-28T20:37:18.405Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:18.405Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:18.405Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 4/0. Result: miss
+[2024-10-28T20:37:18.732Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 2/1. Result: miss
+[2024-10-28T20:37:18.732Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:18.733Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 9/6. Result: miss
+[2024-10-28T20:37:18.733Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:19.010Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 4/0. Result: miss
+[2024-10-28T20:37:19.011Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:19.011Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 1/8. Result: shot
+[2024-10-28T20:37:19.011Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 1/1. Result: shot
+[2024-10-28T20:37:19.011Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 8/0. Result: killed
+[2024-10-28T20:37:19.012Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 4/3. Result: miss
+[2024-10-28T20:37:19.012Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:19.302Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 6/1. Result: miss
+[2024-10-28T20:37:19.302Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:19.303Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:19.303Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 4/4. Result: miss
+[2024-10-28T20:37:19.623Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 7/1. Result: shot
+[2024-10-28T20:37:19.906Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 8/1. Result: miss
+[2024-10-28T20:37:19.906Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:19.907Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 5/6. Result: miss
+[2024-10-28T20:37:19.907Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:20.309Z] INFO: Player g9vkuph already attacked position 8/1.
+[2024-10-28T20:37:20.593Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 8/0. Result: miss
+[2024-10-28T20:37:20.593Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:20.593Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 7/7. Result: miss
+[2024-10-28T20:37:20.593Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:21.092Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 7/0. Result: shot
+[2024-10-28T20:37:21.727Z] INFO: Player g9vkuph already attacked position 7/3.
+[2024-10-28T20:37:22.103Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 7/2. Result: killed
+[2024-10-28T20:37:22.940Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 7/8. Result: miss
+[2024-10-28T20:37:22.940Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:22.941Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 6/4. Result: miss
+[2024-10-28T20:37:22.941Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:23.467Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 8/8. Result: miss
+[2024-10-28T20:37:23.467Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:23.467Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 6/2. Result: miss
+[2024-10-28T20:37:23.467Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:23.930Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 9/7. Result: miss
+[2024-10-28T20:37:23.931Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:23.931Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 4/6. Result: miss
+[2024-10-28T20:37:23.931Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:24.397Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 9/5. Result: miss
+[2024-10-28T20:37:24.397Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:24.398Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 0/6. Result: miss
+[2024-10-28T20:37:24.399Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:24.871Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 9/3. Result: miss
+[2024-10-28T20:37:24.871Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:24.871Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 5/2. Result: miss
+[2024-10-28T20:37:24.871Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:25.287Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 9/1. Result: miss
+[2024-10-28T20:37:25.287Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:25.287Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 1/2. Result: miss
+[2024-10-28T20:37:25.288Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:25.602Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 9/0. Result: miss
+[2024-10-28T20:37:25.602Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:25.602Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 3/3. Result: shot
+[2024-10-28T20:37:25.603Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 0/9. Result: miss
+[2024-10-28T20:37:25.603Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:26.589Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 1/1. Result: miss
+[2024-10-28T20:37:26.589Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:26.589Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 9/2. Result: miss
+[2024-10-28T20:37:26.589Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:27.059Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 0/1. Result: miss
+[2024-10-28T20:37:27.059Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:27.059Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 6/1. Result: miss
+[2024-10-28T20:37:27.060Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:27.510Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 0/4. Result: miss
+[2024-10-28T20:37:27.510Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 4/7. Result: miss
+[2024-10-28T20:37:27.510Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:27.511Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:28.111Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 0/5. Result: miss
+[2024-10-28T20:37:28.111Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:28.111Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 9/5. Result: miss
+[2024-10-28T20:37:28.112Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:28.495Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 0/7. Result: miss
+[2024-10-28T20:37:28.495Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:28.496Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 0/7. Result: miss
+[2024-10-28T20:37:28.496Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:28.934Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 1/9. Result: miss
+[2024-10-28T20:37:28.934Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:28.934Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 6/8. Result: miss
+[2024-10-28T20:37:28.935Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:29.410Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 0/9. Result: miss
+[2024-10-28T20:37:29.410Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:29.411Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 1/0. Result: killed
+[2024-10-28T20:37:29.411Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 8/2. Result: shot
+[2024-10-28T20:37:29.411Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 3/8. Result: miss
+[2024-10-28T20:37:29.412Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:29.817Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 2/8. Result: miss
+[2024-10-28T20:37:29.817Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:29.818Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 5/1. Result: miss
+[2024-10-28T20:37:29.818Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:30.347Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 4/8. Result: shot
+[2024-10-28T20:37:30.702Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 4/7. Result: miss
+[2024-10-28T20:37:30.703Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:30.703Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 4/8. Result: miss
+[2024-10-28T20:37:30.703Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:31.329Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 4/9. Result: miss
+[2024-10-28T20:37:31.329Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:31.330Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 3/0. Result: miss
+[2024-10-28T20:37:31.330Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:32.018Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 3/8. Result: killed
+[2024-10-28T20:37:32.807Z] INFO: Player g9vkuph already attacked position 5/7.
+[2024-10-28T20:37:33.181Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 6/7. Result: miss
+[2024-10-28T20:37:33.181Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:33.182Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 1/9. Result: miss
+[2024-10-28T20:37:33.182Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:33.588Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 7/6. Result: miss
+[2024-10-28T20:37:33.588Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:33.588Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 5/7. Result: miss
+[2024-10-28T20:37:33.589Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:33.981Z] INFO: Player g9vkuph already attacked position 5/7.
+[2024-10-28T20:37:34.499Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 0/6. Result: miss
+[2024-10-28T20:37:34.500Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:34.501Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 2/9. Result: miss
+[2024-10-28T20:37:34.501Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:34.888Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:34.887Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 2/6. Result: miss
+[2024-10-28T20:37:34.888Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 5/4. Result: killed
+[2024-10-28T20:37:34.888Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 0/3. Result: killed
+[2024-10-28T20:37:34.888Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 2/8. Result: miss
+[2024-10-28T20:37:34.888Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:35.545Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 2/5. Result: miss
+[2024-10-28T20:37:35.545Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 8/4. Result: shot
+[2024-10-28T20:37:35.545Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:35.546Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 9/4. Result: miss
+[2024-10-28T20:37:35.546Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:35.910Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 2/4. Result: miss
+[2024-10-28T20:37:35.910Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:35.911Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 5/9. Result: shot
+[2024-10-28T20:37:35.912Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 2/4. Result: miss
+[2024-10-28T20:37:35.912Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:36.551Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 4/2. Result: miss
+[2024-10-28T20:37:36.551Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:36.552Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 2/3. Result: killed
+[2024-10-28T20:37:36.552Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 7/5. Result: miss
+[2024-10-28T20:37:36.552Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:36.972Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 4/1. Result: miss
+[2024-10-28T20:37:36.972Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:36.973Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 8/6. Result: miss
+[2024-10-28T20:37:36.973Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:37.426Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 3/1. Result: miss
+[2024-10-28T20:37:37.426Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:37.426Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 5/0. Result: killed
+[2024-10-28T20:37:37.427Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 8/3. Result: shot
+[2024-10-28T20:37:37.427Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 7/3. Result: miss
+[2024-10-28T20:37:37.427Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:37.837Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 2/0. Result: miss
+[2024-10-28T20:37:37.837Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:37.837Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 6/7. Result: miss
+[2024-10-28T20:37:37.838Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:38.419Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 3/0. Result: miss
+[2024-10-28T20:37:38.419Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:38.420Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 8/8. Result: shot
+[2024-10-28T20:37:38.420Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 5/8. Result: miss
+[2024-10-28T20:37:38.420Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:38.896Z] INFO: Player g9vkuph already attacked position 0/0.
+[2024-10-28T20:37:39.280Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 1/0. Result: miss
+[2024-10-28T20:37:39.280Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:39.281Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 9/9. Result: miss
+[2024-10-28T20:37:39.281Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:39.748Z] INFO: Player g9vkuph already attacked position 1/3.
+[2024-10-28T20:37:40.068Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 1/2. Result: miss
+[2024-10-28T20:37:40.069Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:40.070Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 6/6. Result: miss
+[2024-10-28T20:37:40.070Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:40.479Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 3/2. Result: miss
+[2024-10-28T20:37:40.479Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:40.480Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 6/9. Result: miss
+[2024-10-28T20:37:40.480Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:41.162Z] INFO: Player g9vkuph already attacked position 6/2.
+[2024-10-28T20:37:41.641Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 5/2. Result: miss
+[2024-10-28T20:37:41.641Z] INFO: Turn change: g9vkuph => 8nx2prm
+[2024-10-28T20:37:41.642Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 1/7. Result: killed
+[2024-10-28T20:37:41.643Z] INFO: Player 8nx2prm attacked opponent g9vkuph at position 8/7. Result: miss
+[2024-10-28T20:37:41.643Z] INFO: Turn change: 8nx2prm => g9vkuph
+[2024-10-28T20:37:42.025Z] INFO: Player g9vkuph attacked opponent 8nx2prm at position 5/1. Result: killed
+[2024-10-28T20:37:42.025Z] INFO: Game finished. Winner: g9vkuph
+[2024-10-28T20:37:42.320Z] INFO: Player g9vkuph already attacked position 5/0.
+[2024-10-28T20:37:48.665Z] INFO: Room created with ID: naa1vsd
+[2024-10-28T20:37:48.665Z] INFO: User 74h8y3w added to room naa1vsd
+[2024-10-28T20:37:56.224Z] INFO: Start websocket server on the port: 3000

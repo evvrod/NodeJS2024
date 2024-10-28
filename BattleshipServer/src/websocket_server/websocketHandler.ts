@@ -17,6 +17,7 @@ const messageHandlers: Record<string, (ws: WebSocket, data: string) => void> = {
   'add_ships': handleAddShips,
   'attack': handleAttack,
   'randomAttack': handleRandomAttack,
+  'single_play': handlerSinglePlay,
 };
 
 export function wsHandleClose() {
@@ -151,6 +152,16 @@ function handleAttack(ws: WebSocket, data: string) {
     notifyClientsAboutFinish(game);
   }
   notifyPlayersAboutTurn(game);
+
+  if (clientManager.getPlayerById(game.getCurrentPlayer().idClient)?.isBot) {
+    const botAttackResult = game.randomAttack(game.getCurrentPlayer().idPlayer);
+
+    notifyClientsAttackFeedback(game, botAttackResult);
+    if (game.isGameFinished()) {
+      notifyClientsAboutFinish(game);
+    }
+    notifyPlayersAboutTurn(game);
+  }
 }
 
 function handleRandomAttack(ws: WebSocket, data: string) {
@@ -165,7 +176,55 @@ function handleRandomAttack(ws: WebSocket, data: string) {
   const attackResult = game.randomAttack(indexPlayer);
 
   notifyClientsAttackFeedback(game, attackResult);
+  if (game.isGameFinished()) {
+    notifyClientsAboutFinish(game);
+  }
   notifyPlayersAboutTurn(game);
+
+  if (clientManager.getPlayerById(game.getCurrentPlayer().idClient)?.isBot) {
+    const botAttackResult = game.randomAttack(game.getCurrentPlayer().idPlayer);
+
+    notifyClientsAttackFeedback(game, botAttackResult);
+    if (game.isGameFinished()) {
+      notifyClientsAboutFinish(game);
+    }
+    notifyPlayersAboutTurn(game);
+  }
+}
+
+function handlerSinglePlay(ws: WebSocket) {
+  const playerId = getIdFromWs(sessions, ws);
+  if (!playerId) {
+    throw new Error('Player not found');
+  }
+
+  const botClient = clientManager.registerBot(playerId);
+
+  const room = roomManager.createRoom();
+  roomManager.addPlayerToRoom(playerId, room.roomId);
+  roomManager.addPlayerToRoom(botClient.index, room.roomId);
+
+  const game = gameManager.createGame(room.getPlayers());
+  notifyClientsAboutCreateGame(game);
+
+  const botPlayerId = game
+    .getPlayers()
+    .find((player) => player.idClient === botClient.index)?.idPlayer;
+
+  if (!botPlayerId) {
+    throw new Error(`Bot ${botClient.index} not found`);
+  }
+  const randomShips = game.getRandomShips();
+
+  game.addPlayerShips(botPlayerId, randomShips);
+
+  if (game.arePlayersReady()) {
+    gameManager.startGame(game.getId());
+    if (game.isGameStarted()) {
+      notifyPlayersAboutStartGame(game);
+      notifyPlayersAboutTurn(game);
+    }
+  }
 }
 
 function getIdFromWs(

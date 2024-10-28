@@ -132,28 +132,43 @@ export class Game {
   }
 
   randomAttack(playerId: string) {
+    const attackResults = [];
+    let singleAttackResults;
     let position: { x: number; y: number } = { x: 0, y: 0 };
-    let isValidAttack = false;
+    do {
+      let isValidAttack = false;
+      while (!isValidAttack) {
+        position = {
+          x: Math.floor(Math.random() * this.grid.width),
+          y: Math.floor(Math.random() * this.grid.width),
+        };
 
-    while (!isValidAttack) {
-      position = {
-        x: Math.floor(Math.random() * this.grid.width),
-        y: Math.floor(Math.random() * this.grid.width),
-      };
+        const alreadyAttacked = this.attacks.some(
+          (attack) =>
+            attack.currentPlayer === playerId &&
+            attack.position.x === position.x &&
+            attack.position.y === position.y,
+        );
 
-      const alreadyAttacked = this.attacks.some(
-        (attack) =>
-          attack.position.x === position.x && attack.position.y === position.y,
-      );
-
-      if (!alreadyAttacked) {
-        isValidAttack = true;
+        if (!alreadyAttacked) {
+          isValidAttack = true;
+        }
       }
-    }
 
-    const itemAttack = this.attack(playerId, position);
+      singleAttackResults = this.attack(playerId, position);
 
-    return itemAttack;
+      attackResults.push(...singleAttackResults);
+
+      if (this.isGameFinished()) {
+        break;
+      }
+    } while (
+      singleAttackResults.some(
+        (result) => result.status === 'shot' || result.status === 'killed',
+      )
+    );
+
+    return attackResults;
   }
 
   getWinner() {
@@ -174,6 +189,71 @@ export class Game {
 
   getCurrentPlayer() {
     return this.players[this.currentPlayerIndex];
+  }
+
+  getRandomShips(): Ship[] {
+    const ships: Ship[] = [];
+
+    const fieldSize = this.grid.width;
+
+    const shipTypes: { type: Ship['type']; length: number; count: number }[] = [
+      { type: 'huge', length: 4, count: 1 }, // 1 большой
+      { type: 'large', length: 3, count: 2 }, // 2 средних
+      { type: 'medium', length: 2, count: 3 }, // 3 двойных
+      { type: 'small', length: 1, count: 4 }, // 4 одиночных
+    ];
+
+    const field: number[][] = Array.from({ length: fieldSize }, () =>
+      Array(fieldSize).fill(0),
+    );
+
+    function canPlaceShip(
+      x: number,
+      y: number,
+      length: number,
+      direction: boolean,
+    ): boolean {
+      for (let i = 0; i < length; i++) {
+        const newX = direction ? x + i : x;
+        const newY = direction ? y : y + i;
+
+        if (newX >= fieldSize || newY >= fieldSize || field[newY][newX] === 1) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function placeShip(
+      x: number,
+      y: number,
+      length: number,
+      direction: boolean,
+    ): void {
+      for (let i = 0; i < length; i++) {
+        const newX = direction ? x + i : x;
+        const newY = direction ? y : y + i;
+        field[newY][newX] = 1;
+      }
+    }
+
+    shipTypes.forEach(({ type, length }) => {
+      let placed = false;
+
+      while (!placed) {
+        const x = Math.floor(Math.random() * fieldSize);
+        const y = Math.floor(Math.random() * fieldSize);
+        const direction = Math.random() < 0.5;
+
+        if (canPlaceShip(x, y, length, direction)) {
+          placeShip(x, y, length, direction);
+          ships.push({ type, length, position: { x, y }, direction });
+          placed = true;
+        }
+      }
+    });
+
+    return ships;
   }
 
   arePlayersReady() {
@@ -257,8 +337,6 @@ export class Game {
       x: ship.direction ? ship.position.x : ship.position.x + i,
       y: ship.direction ? ship.position.y + i : ship.position.y,
     }));
-
-    console.log(playerId);
 
     const isDestroyed = shipParts.every((part) =>
       this.attacks.some(
@@ -411,12 +489,12 @@ export class GameManager {
     }));
   }
 
-  private generateGameId(): string {
-    return Math.random().toString(36).substring(2, 9);
-  }
-
   getGame(gameId: string): Game | undefined {
     return this.games.get(gameId);
+  }
+
+  private generateGameId(): string {
+    return Math.random().toString(36).substring(2, 9);
   }
 }
 
