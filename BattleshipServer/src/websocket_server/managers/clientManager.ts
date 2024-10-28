@@ -32,4 +32,8 @@ export class ClientManager {
     }
     return undefined;
   }
+
+  getPlayerById(id: string): Client | undefined {
+    return this.players.get(id);
+  }
 }

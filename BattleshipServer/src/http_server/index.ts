@@ -13,12 +13,10 @@ const httpServer = http.createServer(function (req, res) {
     __dirname + (req.url === '/' ? '/front/index.html' : '/front' + req.url);
   fs.readFile(file_path, function (err, data) {
     if (err) {
-      console.log(err);
       res.writeHead(404);
       res.end(JSON.stringify(err));
       return;
     }
-    console.log(data);
     res.writeHead(200);
     res.end(data);
   });
