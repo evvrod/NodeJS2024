@@ -55,6 +55,15 @@ export class Game {
     logger.log(`Game ${this.id} has started`);
   }
 
+  finishGame(winnerId: string) {
+    this.statusGame = 'finished';
+    this.winner = this.getPlayerById(winnerId);
+    if (this.winner) {
+      this.gameManager.recordWinner(this.winner);
+      logger.log(`Game finished. Winner: ${this.winner.idPlayer}`);
+    }
+  }
+
   attack(playerId: string, position: { x: number; y: number }) {
     if (this.isAlreadyAttacked(playerId, position)) {
       logger.log(
@@ -471,6 +480,16 @@ export class GameManager {
     game.startGame();
   }
 
+  finishGame(game: Game, clientId: string) {
+    const winnerId = game
+      .getPlayers()
+      .find((player) => player.idClient !== clientId)?.idPlayer;
+
+    if (winnerId) {
+      game.finishGame(winnerId);
+    }
+  }
+
   recordWinner(player: GamePlayer) {
     const existingWinner = this.winners.find(
       (winner) => winner.player.idClient === player.idClient,
@@ -491,6 +510,19 @@ export class GameManager {
 
   getGame(gameId: string): Game | undefined {
     return this.games.get(gameId);
+  }
+
+  getGameWithPlayer(clientId: string): string | undefined {
+    for (const game of this.games.values()) {
+      const isPlayerInGame = game
+        .getPlayers()
+        .find((player) => player.idClient === clientId);
+      if (isPlayerInGame) {
+        console.log(game.getId());
+        return game.getId();
+      }
+    }
+    return undefined;
   }
 
   private generateGameId(): string {

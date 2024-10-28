@@ -21,7 +21,7 @@ export default function startWebSocketServer(port: number) {
     );
 
     ws.on('message', (message: string) => wsHandleMessage(ws, message));
-    ws.on('close', () => wsHandleClose());
+    ws.on('close', () => wsHandleClose(ws));
     ws.on('error', (error) => wsHandleError(error));
   });
 

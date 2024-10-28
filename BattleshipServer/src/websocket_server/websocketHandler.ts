@@ -20,8 +20,22 @@ const messageHandlers: Record<string, (ws: WebSocket, data: string) => void> = {
   'single_play': handlerSinglePlay,
 };
 
-export function wsHandleClose() {
-  logger.log('Client disconnected');
+export function wsHandleClose(ws: WebSocket) {
+  const clientId = getIdFromWs(sessions, ws);
+  if (!clientId) {
+    throw new Error(`Client ${clientId} not found`);
+  }
+
+  logger.log(`Client disconnected ${clientId}`);
+
+  const gameId = gameManager.getGameWithPlayer(clientId);
+  if (gameId) {
+    const game = gameManager.getGame(gameId);
+    if (game) {
+      gameManager.finishGame(game, clientId);
+      notifyClientsAboutFinish(game);
+    }
+  }
 }
 
 export function wsHandleError(error: unknown) {
@@ -90,26 +104,31 @@ function handleRegister(ws: WebSocket, data: string) {
 }
 
 function handleCreateRoom(ws: WebSocket) {
-  const playerId = getIdFromWs(sessions, ws);
-  if (!playerId) {
+  const clientId = getIdFromWs(sessions, ws);
+  if (!clientId) {
     throw new Error('Player not found');
   }
   const room = roomManager.createRoom();
-  roomManager.addPlayerToRoom(playerId, room.roomId);
+  roomManager.addPlayerToRoom(clientId, room.roomId);
   notifyClientsAboutRooms();
 }
 
 function handleAddUserToRoom(ws: WebSocket, data: string) {
   const { indexRoom } = JSON.parse(data);
-  const playerId = getIdFromWs(sessions, ws);
+  const clientId = getIdFromWs(sessions, ws);
 
-  if (!playerId) {
-    throw new Error('Player not found');
+  if (!clientId) {
+    throw new Error(`Client ${clientId} not found`);
   }
-  const room = roomManager.getRoomById(indexRoom);
-  if (!room) throw new Error('Room not found');
 
-  roomManager.addPlayerToRoom(playerId, indexRoom);
+  const room = roomManager.getRoomById(indexRoom);
+  if (!room) throw new Error(`Room ${indexRoom} not found`);
+
+  if (room.hasPlayer(clientId)) {
+    throw new Error(`Client ${clientId} already in room ${room.roomId}`);
+  }
+
+  roomManager.addPlayerToRoom(clientId, indexRoom);
   notifyClientsAboutRooms();
 
   if (room.isRoomFull()) {
