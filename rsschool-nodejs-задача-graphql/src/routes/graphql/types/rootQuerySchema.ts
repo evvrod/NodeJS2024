@@ -1,19 +1,59 @@
-import { GraphQLObjectType, GraphQLList, GraphQLNonNull } from 'graphql';
+import {
+  GraphQLObjectType,
+  GraphQLList,
+  GraphQLNonNull,
+  GraphQLResolveInfo,
+} from 'graphql';
 import { IGraphQLContext } from './GraphQLContext.js';
 
-import { UserType } from './user.js';
+import { IUser, UserType } from './user.js';
 import { PostType } from './post.js';
 import { ProfileType } from './profile.js';
 import { MemberTypeType, MemberTypeIdEnum } from './member.js';
 import { UUIDType } from './uuid.js';
+import { parseResolveInfo } from 'graphql-parse-resolve-info';
+
+interface ParsedInfo {
+  fieldsByTypeName: {
+    User?: {
+      userSubscribedTo?: boolean;
+      subscribedToUser?: boolean;
+    };
+  };
+}
 
 export const RootQueryType = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
     users: {
       type: new GraphQLList(new GraphQLNonNull(UserType)),
-      resolve: async (_source, _args, context: IGraphQLContext) => {
-        return await context.prisma.user.findMany();
+      resolve: async (
+        _source,
+        _args,
+        context: IGraphQLContext,
+        info: GraphQLResolveInfo,
+      ) => {
+        const parsedInfo: ParsedInfo | null = parseResolveInfo(info) as ParsedInfo | null;
+
+        const includeUserSubscribedTo = Boolean(
+          parsedInfo?.fieldsByTypeName?.User?.userSubscribedTo,
+        );
+        const includeSubscribedToUser = Boolean(
+          parsedInfo?.fieldsByTypeName?.User?.subscribedToUser,
+        );
+
+        const users: IUser[] = await context.prisma.user.findMany({
+          include: {
+            userSubscribedTo: includeUserSubscribedTo ? true : false,
+            subscribedToUser: includeSubscribedToUser ? true : false,
+          },
+        });
+
+        return users.map((user) => ({
+          ...user,
+          userSubscribedTo: user.userSubscribedTo?.map((sub) => sub.author) || [],
+          subscribedToUser: user.subscribedToUser?.map((sub) => sub.subscriber) || [],
+        }));
       },
     },
     user: {
@@ -27,8 +67,9 @@ export const RootQueryType = new GraphQLObjectType({
     },
     posts: {
       type: new GraphQLList(new GraphQLNonNull(PostType)),
-      resolve: async (_source, _args, context: IGraphQLContext) =>
-        await context.prisma.post.findMany(),
+      resolve: async (_source, _args, context: IGraphQLContext) => {
+        return await context.prisma.post.findMany();
+      },
     },
     post: {
       type: PostType,

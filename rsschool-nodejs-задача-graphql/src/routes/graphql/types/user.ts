@@ -18,11 +18,26 @@ export interface IUser {
   balance: number;
   profile?: IProfile;
   posts?: IPost[];
-  userSubscribedTo?: IUser[];
-  subscribedToUser?: IUser[];
+  userSubscribedTo?: SubscribedToUser[];
+  subscribedToUser?: UserSubscribedTo[];
 }
 
 export type IUserInput = Pick<IUser, 'id' | 'name' | 'balance'>;
+
+interface SubscribedToUser {
+  author?: IUser;
+  authorId: string;
+}
+
+interface UserSubscribedTo {
+  subscriber?: IUser;
+  subscriberId: string;
+}
+
+export interface UserSubscriptions {
+  subscribedToUser: SubscribedToUser[];
+  userSubscribedTo: UserSubscribedTo[];
+}
 
 export const UserType: GraphQLObjectType<IUser, IGraphQLContext> = new GraphQLObjectType({
   name: 'User',
@@ -33,70 +48,41 @@ export const UserType: GraphQLObjectType<IUser, IGraphQLContext> = new GraphQLOb
     profile: {
       type: ProfileType,
       resolve: async (user, _args, context) => {
-        return context.prisma.profile.findUnique({
-          where: { userId: user.id },
-          include: {
-            memberType: true,
-          },
-        });
+        const profile = await context.loaders.profileLoader.load(user.id);
+
+        if (profile) {
+          const memberType = await context.loaders.memberTypeLoader.load(profile.id);
+          if (memberType) profile.memberType = memberType;
+        }
+
+        return profile;
       },
     },
     posts: {
       type: new GraphQLList(PostType),
       resolve: async (user, _args, context) => {
-        return context.prisma.post.findMany({
-          where: { authorId: user.id },
-        });
+        const posts = await context.loaders.postsLoader.load(user.id);
+        return posts;
       },
     },
     userSubscribedTo: {
       type: new GraphQLList(UserType),
       resolve: async (user, _args, context: IGraphQLContext) => {
-        return await context.prisma.subscribersOnAuthors
-          .findMany({
-            where: { subscriberId: user.id },
-            include: {
-              author: {
-                select: {
-                  id: true,
-                  name: true,
-                  subscribedToUser: {
-                    select: {
-                      subscriber: {
-                        select: { id: true },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          })
-          .then((subs) => subs.map((sub) => sub.author));
+        if (user.userSubscribedTo) {
+          return user.userSubscribedTo;
+        }
+        const data = await context.loaders.userSubscriptionLoader.load(user.id);
+        return data.userSubscribedTo || [];
       },
     },
     subscribedToUser: {
       type: new GraphQLList(UserType),
       resolve: async (user, _args, context: IGraphQLContext) => {
-        return await context.prisma.subscribersOnAuthors
-          .findMany({
-            where: { authorId: user.id },
-            include: {
-              subscriber: {
-                select: {
-                  id: true,
-                  name: true,
-                  userSubscribedTo: {
-                    select: {
-                      author: {
-                        select: { id: true },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          })
-          .then((subs) => subs.map((sub) => sub.subscriber));
+        if (user.subscribedToUser) {
+          return user.subscribedToUser;
+        }
+        const data = await context.loaders.userSubscriptionLoader.load(user.id);
+        return data.subscribedToUser || [];
       },
     },
   }),
